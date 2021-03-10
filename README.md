@@ -54,6 +54,25 @@ autof(config, {
 });
 ```
 
+## Running all tests
+
+The option `disabled` is there so you can configure your environment to run all tests even when there are pending changes in git. To do it you can check for a parameter (`process.argv`) or with an environment variable (`process.env`). For example if you decide to go with a parameter called `--all` you could do the following:
+
+```js
+const autof = require("autof");
+const runAllTests = process.argv.indexOf("--all") >= 0;
+
+module.exports = function (config) {
+  autof(config, {
+    disabled: runAllTests
+  });
+
+  config.set({
+    // ...
+  });
+};
+```
+
 # SimonTest
 
 If you like this tool then check out [SimonTest](https://marketplace.visualstudio.com/items?itemName=SimonTest.simontest). It takes care of the most tedious part of testing components and services: stubbing dependencies. This extension analyzes your code and creates the necessary stubs, configures the TestBed, and it even generates basic tests.
