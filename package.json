@@ -1,6 +1,6 @@
 {
   "name": "autof",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Compile and run Angular tests affected by git changes",
   "main": "index.js",
   "scripts": {
