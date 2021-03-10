@@ -1,0 +1,23 @@
+{
+  "name": "autof",
+  "version": "1.0.3",
+  "description": "Compile and run Angular tests affected by git changes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "unit test",
+    "karma",
+    "jasmine",
+    "test"
+  ],
+  "author": "SimonTest",
+  "license": "MIT",
+  "homepage": "https://github.com/SimonTestNet/autof",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimonTestNet/autof.git"
+  }
+}
