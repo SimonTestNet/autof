@@ -7,6 +7,8 @@ const isString = obj => typeof obj === "string" || obj instanceof String;
 
 function autofLoader(source) {
   const options = this.query;
+  if (options.disabled) return source;
+
   function log(msg) {
     if (!options.silent) {
       console.log("autof - " + msg);
@@ -31,7 +33,7 @@ function autofLoader(source) {
 
   const specFiles = [];
 
-  if (changedFiles.length <= autofLimit && !options.disabled) {
+  if (changedFiles.length <= autofLimit) {
     function findSpecFiles(dir) {
       fs.readdirSync(dir).forEach(file => {
         const absolute = path.join(dir, file);

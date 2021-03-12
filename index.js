@@ -36,7 +36,9 @@ function autof(config, options = {}) {
   }
 
   if (Array.isArray(options.webpackConfig)) {
-    options.webpackConfig = options.webpackConfig[0];
+    throw new Error(
+      "autof - webpackConfig option is an array. Use the webpack config that loads the initial test file."
+    );
   }
 
   options.webpackConfig.module.rules.push({

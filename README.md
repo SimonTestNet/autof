@@ -22,6 +22,7 @@ On your `karma.config.js` file import autof and call it with the configuration:
 const autof = require("autof");
 
 module.exports = function (config) {
+
   autof(config); // That's it.
 
   config.set({
@@ -44,7 +45,7 @@ Options default values:
 
 ```js
 autof(config, {
-  limit: 50, // More modified files in git than this and all test will be run
+  limit: 50, // How many files can be modified before giving up and run all tests
   disabled: false, // Turn off autof
   silent: false, // Don't display to the console
   sourceRoot: "src", // Root folder of your application
@@ -63,6 +64,7 @@ const autof = require("autof");
 const runAllTests = process.argv.indexOf("--all") >= 0;
 
 module.exports = function (config) {
+
   autof(config, {
     disabled: runAllTests
   });
