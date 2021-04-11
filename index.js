@@ -41,10 +41,9 @@ function autof(config, options = {}) {
     );
   }
 
-  options.webpackConfig.module.rules.push({
+  options.webpackConfig.module.rules.unshift({
     include: [options.testFile],
     use: [
-      options.loader,
       {
         loader: path.resolve(__dirname, "loader.js"),
         options: {
@@ -54,7 +53,7 @@ function autof(config, options = {}) {
           silent: options.silent
         }
       }
-    ]
+    ].concat(Array.isArray(options.loader) ? options.loader : [options.loader])
   });
 }
 
